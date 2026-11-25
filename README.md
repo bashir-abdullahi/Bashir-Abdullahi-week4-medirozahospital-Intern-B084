@@ -156,3 +156,36 @@ Each recommendation maps to a confirmed finding. Depending on what the evidence 
 - Review access logs, preserve relevant evidence, and conduct a focused retest after remediation.
 
 ---
+## Responsible Disclosure and Data Handling
+
+This is a public-facing learning portfolio, not a place to publish confidential hospital information. *Do not commit:*
+
+- Patient names, medical reports, diagnoses, patient identifiers, or other health information.
+- Employee personal information or unredacted salary records.
+- Private shareholder identifiers or confidential financial records.
+- Passwords, recovered passwords, session cookies, tokens, API keys, or credentials.
+- Unredacted request/response captures that expose personal data or secrets.
+
+Keep original evidence in a secure, access-controlled location for instructor review. Publish only redacted screenshots or summaries approved for public release. If public disclosure of the target or findings is not authorised, anonymise the target and remove identifying details before publishing.
+
+---
+
+## Limitations
+
+[Document what was not tested, what could not be verified, any tool limitations, and any milestones that were only partially completed.]
+
+---
+
+## Conclusion
+
+[Summarise the milestones completed, the most significant confirmed findings, their demonstrated impact, and the highest-priority remediation actions. Do not claim a successful exploit or data retrieval unless supported by evidence.]
+
+---
+
+## Acknowledgement
+
+Prepared as part of the Networkwalks Week 4 Penetration Testing Project. The project brief identifies Mediroza General Hospital as the client and describes the exercise as a controlled, authorised educational assessment.
+
+- *Author:* [BASHIR ABDULLAHI]
+- *Date:* [26/11,2024]
+-
