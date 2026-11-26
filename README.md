@@ -86,13 +86,16 @@ Only tools actually used are listed. Accurate versions and commands are retained
 
 One entry per *confirmed* finding. Failed tests, generic error messages, technology fingerprints, and unverified suspicions are *not* treated as proof of a vulnerability.
 
-| ID | Finding | Severity | Evidence |
+| ID | Finding | Severity 
 |---|---|---|---|
 | F-01 | [Confirmed finding title] | [Critical/High/Medium/Low/Informational] | [Evidence ID] |
 | F-02 | [Confirmed finding title] | [Severity] | [Evidence ID] |
 | F-03 | [Confirmed finding title] | [Severity] | [Evidence ID] |
 
+
 ---
+  ## Evidence
+  
 
 ### Finding Write-Up Template
 
