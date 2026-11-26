@@ -92,9 +92,9 @@ One entry per *confirmed* finding. Failed tests, generic error messages, technol
 | F-02 | [Confirmed finding title] | [Severity] | [Evidence ID] |
 | F-03 | [Confirmed finding title] | [Severity] | [Evidence ID] |
 
-
 ---
   ## Evidence
+  
   
 
 ### Finding Write-Up Template
