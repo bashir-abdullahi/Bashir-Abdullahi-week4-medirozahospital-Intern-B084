@@ -66,7 +66,7 @@ During the assessment, access controls were bypassed, allowing unauthorised retr
 
 *Evidence*
 - Redacted screenshots:
--  [evidence/](evidence/Screenshot%202026-11-25%20232235.png)
+-  [evidence/](evidence)
 - Proof of retrieval and access path are documented in the private submission.
 
 *Impact*
