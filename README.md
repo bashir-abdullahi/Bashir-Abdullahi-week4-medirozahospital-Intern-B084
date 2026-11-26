@@ -65,7 +65,8 @@ The assessment followed a standard black-box workflow: Reconnaissance → Enumer
 During the assessment, access controls were bypassed, allowing unauthorised retrieval of 3 confidential patient PDF lab reports from a restricted area of the site. 
 
 *Evidence*
-- Redacted screenshots: [evidence/](evidence/)
+- Redacted screenshots:
+-  [evidence/](evidence/https://github.com/bashir-abdullahi/Bashir-Abdullahi-week4-medirozahospital-Intern-B084/blob/main/evidence/Screenshot%202026-11-25%20232235.png)
 - Proof of retrieval and access path are documented in the private submission.
 
 *Impact*
