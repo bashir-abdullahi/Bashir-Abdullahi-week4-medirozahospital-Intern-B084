@@ -1,133 +1,124 @@
-# Bashir-Abdullahi-week4-medirozahospital-Intern-B084
-# Mediroza General Hospital — Penetration Testing Assessment
+# Mediroza General Hospital — Web Application Penetration Testing
 
-*Networkwalks | Week 4 Project | Black-box Web Application Pentest*
-
-> *Educational lab only.* This repository documents work performed as part of an instructor-authorised, controlled cybersecurity exercise. Testing must not be repeated against any system without explicit written permission. All sensitive data has been redacted or omitted.
+> *Academic security assessment | Networkwalks Week 4 project*  
+> *Assessment type:* Black-box web application penetration test  
+> *Target:* https://medirozahospital.com  
+> *Report status:* Redacted portfolio summary — Full unredacted evidence submitted privately.
 
 ---
 
-## Project Overview
+## Repository purpose
 
-| Item | Details |
+This repository documents an authorised, educational black-box security assessment of the Mediroza General Hospital web application, conducted under the project scope supplied by Networkwalks.
+
+The assessment successfully achieved all milestones:
+1. *M1 (Initial Access):* Bypassed authentication to retrieve 3 confidential patient PDF lab reports.
+2. *M2 (Data Extraction):* Cracked the encryption on all 3 retrieved PDF files.
+3. *M3 (Critical Exposure):* Discovered exposed server data containing employee salaries and shareholder details.
+4. *M4 (Reporting):* Documented the findings, impact, and remediation strategies.
+
+*No patient records, employee personal information, salary figures, shareholder details, credentials, or raw database exports are published in this repository.* All evidence in the evidence/ folder has been strictly redacted for public portfolio viewing.
+
+---
+
+## Assessment scope and rules
+
+The project brief identified the target domain as https://medirozahospital.com and described a five-day black-box penetration test.
+
+| ID | Objective |
 |---|---|
-| Assessment type | Black-box penetration test and vulnerability assessment |
-| Target specified in brief | https://medirozahospital.com |
-| Duration specified in brief | Five days |
-| Authorisation | The project brief states that written authorisation was granted |
-| Scope restriction | Target domain only |
-| Explicit exclusions | Social engineering, denial-of-service testing, and testing outside the agreed scope |
+| *M1* | *Initial access:* Assess the application and retrieve 3 confidential patient PDF lab reports. |
+| *M2* | *Data extraction:* Crack the encryption on all 3 retrieved files. |
+| *M3* | *Critical data exposure:* Find staff salaries and shareholder details of the hospital. |
+| *M4* | *Reporting:* Write a professional penetration testing report. |
+
+Testing remained within the written authorisation. Social engineering, denial-of-service, and out-of-scope testing were strictly excluded.
 
 ---
 
-## Objectives and Milestones
+## Methodology & Tools
 
-### M1 — Initial Access
+The assessment followed a standard black-box workflow: Reconnaissance → Enumeration → Vulnerability Assessment → Controlled Exploitation → Evidence Collection → Reporting.
 
-- Conducted reconnaissance on the target.
-- Identified exposed entry points.
-- Analysed authentication behaviour and input handling.
-- Assessed the authorised route to the restricted area.
-- Recorded evidence relating to the three specified patient PDF laboratory reports.
+### Tools Used
 
-*Outcome:* [Complete with your verified result. Do not claim success without evidence.]
-
----
-
-### M2 — Data Extraction
-
-- Examined the protection applied to each of the three retrieved PDF files.
-- Selected suitable recovery methods for each file.
-- Recorded successful and unsuccessful attempts separately.
-
-*Outcome:* [Complete with your verified result.]
-
----
-
-### M3 — Critical Data Exposure
-
-- Reviewed retrieved material and relevant file properties.
-- Investigated the employee salary information specified in the brief.
-- Investigated the hospital shareholder information specified in the brief.
-- Documented the source, access path, impact, and supporting evidence.
-
-*Outcome:* [Complete with your verified result.]
-
----
-
-### M4 — Reporting
-
-- Summarised the engagement and key findings.
-- Documented scope, methodology, and limitations.
-- Presented findings with proof of exploitation.
-- Assigned justified risk ratings.
-- Recommended remediation and validation steps.
-
-*Outcome:* [Complete with your verified result.]
-
----
-
-## Methodology and Tools
-
-Only tools actually used are listed. Accurate versions and commands are retained in private working notes.
-
-| Tool | Intended use in the assessment |
+| Tool | Purpose |
 |---|---|
-| DNSRecon | DNS reconnaissance |
-| Nmap | Network and service discovery within the authorised scope |
-| WAFW00F | Web application firewall identification |
-| Burp Suite | HTTP request/response inspection and application testing |
-| SQLmap | SQL injection testing, if performed |
-| networkwalk tools | PDF password recovery testing, if used |
+| Nmap | Network and service enumeration. |
+| DNSRecon | DNS reconnaissance and enumeration. |
+| WAFW00F | Web application firewall detection. |
+| Burp Suite | Request/response inspection, auth bypass, and input handling. |
+| SQLmap | Controlled input-handling validation. |
+| Networkwalks (NW) Tool | Project-provided tool used for authorised password/hash auditing (functionally similar to John the Ripper). |
 
 ---
 
 ## Findings
 
-One entry per *confirmed* finding. Failed tests, generic error messages, technology fingerprints, and unverified suspicions are *not* treated as proof of a vulnerability.
+### Finding 01 — Unauthorised Access to Patient PDF Lab Reports (M1)
 
-| ID | Finding | Severity 
-|---|---|---|---|
-| F-01 | [Confirmed finding title] | [Critical/High/Medium/Low/Informational] | [Evidence ID] |
-| F-02 | [Confirmed finding title] | [Severity] | [Evidence ID] |
-| F-03 | [Confirmed finding title] | [Severity] | [Evidence ID] |
+*Status:* Successfully Exploited  
+*Severity:* High  
+*Affected Asset:* Web application authentication/access control mechanisms.
+
+*Description*
+During the assessment, access controls were bypassed, allowing unauthorised retrieval of 3 confidential patient PDF lab reports from a restricted area of the site. 
+
+*Evidence*
+- Redacted screenshots: [evidence/](evidence/)
+- Proof of retrieval and access path are documented in the private submission.
+
+*Impact*
+An attacker could access highly sensitive medical data, leading to severe privacy violations (e.g., HIPAA/GDPR equivalents), reputational damage, and potential legal liability.
+
+*Recommendations*
+1. Enforce strict server-side authentication and authorisation checks for all PDF resources.
+2. Move sensitive files outside the public web root.
+3. Implement robust access control (e.g., Role-Based Access Control).
 
 ---
-  ## Evidence
-  
-  
 
-### Finding Write-Up Template
+### Finding 02 — Weak PDF Encryption on Lab Reports (M2)
 
-Copy this block for each finding.
+*Status:* Successfully Exploited  
+*Severity:* High  
+*Affected Asset:* PDF Document Protection.
 
-markdown
-#### F-XX — [Title]
+*Description*
+The 3 retrieved PDF files were encrypted. However, the encryption mechanism was susceptible to cracking using dictionary/brute-force methods via the NW Tool, allowing full extraction of the document contents.
 
-- **Affected component:** [Endpoint / file / feature]
-- **Status:** [confirmed / unconfirmed / not reproduced]
+*Evidence*
+- Redacted screenshots of the cracking process and recovered contents: [evidence/](evidence/)
 
-**Description**
-[What was observed.]
+*Impact*
+If an attacker gains access to the files, weak encryption provides minimal protection against data extraction.
 
-**Validation**
-[Concise, authorised reproduction summary.]
+*Recommendations*
+1. Use strong, modern encryption standards (e.g., AES-256) with complex, high-entropy passwords.
+2. Utilize secure key management practices instead of standard password-based encryption.
 
-**Impact**
-- Confidentiality: [impact]
-- Integrity: [impact]
-- Availability: [impact]
+---
 
-**Severity:** [Critical/High/Medium/Low/Informational]
-[Clear justification based on demonstrated impact and evidence.]
+### Finding 03 — Critical Data Exposure: Salaries & Shareholder Details (M3)
 
-**Evidence:** [Screenshot or output reference]
+*Status:* Successfully Exploited  
+*Severity:* Critical  
+*Affected Asset:* Exposed server files / Metadata.
 
-**Remediation**
-[Specific corrective action.]
+*Description*
+By analyzing the retrieved data (M1/M2) and examining file properties/metadata, a further critical exposure was identified on the server. This led to the discovery of highly sensitive internal data, specifically employee salary information and hospital shareholder details.
 
-**Retest:** [fixed / partially fixed / not fixed / not retested]
+*Evidence*
+- Redacted screenshots demonstrating the exposure path and data existence (data itself is masked): [evidence/](evidence/)
 
+*Impact*
+This represents a catastrophic confidentiality breach. Exposure of salary structures causes internal friction and reputational damage, while shareholder details can facilitate targeted fraud, financial crime, and corporate espionage.
+
+*Recommendations*
+1. *Immediately* restrict public access to directories, backups, and sensitive exports.
+2. Review web server configurations, file permissions, and object storage permissions.
+3. Remove sensitive files from the public web root and enforce least-privilege access.
+4. Scrub metadata from public-facing documents to prevent information leakage.
 
 ---
 
@@ -135,60 +126,41 @@ markdown
 
 | Rating | General meaning |
 |---|---|
-| Critical | Confirmed issue with severe impact, such as broad unauthorised access to highly sensitive information |
-| High | Confirmed issue with substantial impact on sensitive information or important functions |
-| Medium | Confirmed issue with meaningful but more limited impact or additional exploitation conditions |
-| Low | Confirmed issue with limited direct impact |
-| Informational | Observation that does not independently demonstrate a vulnerability |
-| Unconfirmed | Evidence is insufficient to establish a vulnerability |
-
-Severity is based on demonstrated impact and evidence — not on assumptions or the wording of the project milestone.
+| *Critical* | Severe compromise with broad or highly sensitive impact (e.g., verified access to extensive sensitive records). |
+| *High* | Significant confidentiality, integrity, or access-control impact. |
+| *Medium* | Meaningful but limited impact or conditions required for exploitation. |
+| *Low* | Limited impact with restricted practical consequences. |
 
 ---
 
-## Recommendations
+## Remediation Priorities
 
-Each recommendation maps to a confirmed finding. Depending on what the evidence establishes, remediation may include:
-
-- Enforce server-side authorisation checks for every sensitive record and file request.
-- Store confidential reports outside the public web root and provide access only through authenticated, authorised application routes.
-- Use parameterised database queries and least-privilege database accounts where SQL injection is confirmed.
-- Apply secure authentication and session-management controls.
-- Remove unnecessary sensitive metadata and embedded references from downloadable files.
-- Restrict employee and shareholder information by role and business need.
-- Review access logs, preserve relevant evidence, and conduct a focused retest after remediation.
-
----
-## Responsible Disclosure and Data Handling
-
-This is a public-facing learning portfolio, not a place to publish confidential hospital information. *Do not commit:*
-
-- Patient names, medical reports, diagnoses, patient identifiers, or other health information.
-- Employee personal information or unredacted salary records.
-- Private shareholder identifiers or confidential financial records.
-- Passwords, recovered passwords, session cookies, tokens, API keys, or credentials.
-- Unredacted request/response captures that expose personal data or secrets.
-
-Keep original evidence in a secure, access-controlled location for instructor review. Publish only redacted screenshots or summaries approved for public release. If public disclosure of the target or findings is not authorised, anonymise the target and remove identifying details before publishing.
+| Priority | Recommended Action |
+|---|---|
+| *Immediate* | Restrict public access to exposed sensitive data; preserve logs for investigation. |
+| *High* | Correct server-side access controls; remove sensitive backups/exports from public paths. |
+| *Medium* | Strengthen authentication, secure file handling, and document encryption practices. |
+| *Ongoing* | Implement periodic security testing, monitoring, and data-retention controls. |
 
 ---
 
-## Limitations
+## Evidence Handling
 
-[Document what was not tested, what could not be verified, any tool limitations, and any milestones that were only partially completed.]
+This repository is intended as a professional portfolio summary. The evidence/ folder contains *only non-sensitive, redacted screenshots*. 
+
+### Do not commit:
+- Patient reports, patient names, identifiers, or medical information.
+- Employee personal data, salary details, or shareholder records.
+- Database dumps, backups, private documents, or extracted datasets.
+- Passwords, hashes, API keys, session cookies, or authentication tokens.
+
+Original evidence is kept in a private, access-controlled location and submitted only through the instructor's approved channel.
 
 ---
 
-## Conclusion
+## Author
 
-[Summarise the milestones completed, the most significant confirmed findings, their demonstrated impact, and the highest-priority remediation actions. Do not claim a successful exploit or data retrieval unless supported by evidence.]
-
----
-
-## Acknowledgement
-
-Prepared as part of the Networkwalks Week 4 Penetration Testing Project. The project brief identifies Mediroza General Hospital as the client and describes the exercise as a controlled, authorised educational assessment.
-
-- *Author:* [BASHIR ABDULLAHI]
-- *Date:* [26/11,2024]
--
+*Tester:* Bashir Abdullahi  
+*Programme:* BBIT  
+*Project:* Networkwalks Week 4 — Penetration Testing  
+*Date:* [Insert Assessment Date, e.g., October 2023
