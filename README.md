@@ -163,6 +163,6 @@ Original evidence is kept in a private, access-controlled location and submitted
 ## Author
 
 *Tester:* Bashir Abdullahi  
-*Programme:* BBIT  
+*Programme:* Networkwalks Internship 
 *Project:* Networkwalks Week 4 — Penetration Testing  
-*Date:* [Insert Assessment Date, e.g., October 2023
+*Date:* [26/11/2026]
