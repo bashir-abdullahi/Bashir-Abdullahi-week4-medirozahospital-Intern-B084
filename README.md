@@ -88,7 +88,8 @@ An attacker could access highly sensitive medical data, leading to severe privac
 The 3 retrieved PDF files were encrypted. However, the encryption mechanism was susceptible to cracking using dictionary/brute-force methods via the NW Tool, allowing full extraction of the document contents.
 
 *Evidence*
-- Redacted screenshots of the cracking process and recovered contents: [evidence/](evidence/)
+- Redacted screenshots of the cracking process and recovered contents:
+  [evidence/](evidence/shareholder.png)
 
 *Impact*
 If an attacker gains access to the files, weak encryption provides minimal protection against data extraction.
