@@ -66,7 +66,10 @@ During the assessment, access controls were bypassed, allowing unauthorised retr
 
 *Evidence*
 - Redacted screenshots:
--  [evidence/](evidence)
+- #### Evidence
+- **Finding 01:** [View PDF Access Evidence](evidence/pdf3_access.png)
+- **Finding 02:** [View PDF Cracking Evidence](evidence/pdf1_cracking.png)
+- **Finding 03:** [View Shareholder Exposure Evidence](evidence/shareholder.png)
 - Proof of retrieval and access path are documented in the private submission.
 
 *Impact*
